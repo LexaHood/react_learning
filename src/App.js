@@ -9,7 +9,7 @@ class App extends Component {
     cars: [
       { name: 'Ford', year: 2019 },
       { name: 'Audi', year: 2022 },
-      { name: 'FIAT', year: 2008 },
+      { name: 'Ferrari', year: 2008 },
       // { name: 'Ferrari', year: 2022 },
       // { name: 'Ford', year: 2002 },
     ],

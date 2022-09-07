@@ -30,7 +30,8 @@ export default (props) => (
     marginBottom: '10px',
     display: 'inline-block',
     padding: '10px',
-    margin: '10px'
+    boxShadow: '0 4px 5px 0 rgba(0,0,0, .14)',
+    borderRadius: '5px'
   }}>
     <p>Car name: <strong>{props.name}</strong></p>
     <p>Year: <strong>{props.year}</strong></p>

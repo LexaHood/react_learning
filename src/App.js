@@ -50,7 +50,7 @@ class App extends Component {
 
     cars.splice(index, 1);
 
-    this.setState({cars})
+    this.setState({ cars })
   }
 
   handleInput = (event) => {
@@ -72,39 +72,31 @@ class App extends Component {
 
         <Clock />
 
-        {this.state.showCars ?
-          this.state.cars.map((car, index) => {
-            return (
-              <Car
-                key={index}
-                name={car.name}
-                year={car.year}
-                onDelete={this.deleteHandler.bind(this, index)}
-                onChangeName={event => this.onChangeName(event.target.value, index)} //люое название функции
-              />
-            );
-          })
-          : null
-        }
+        <div style={{
+          width: 400,
+          margin: 'auto',
+          paddingTop: '20px'
+        }}>
+          {this.state.showCars ?
+            this.state.cars.map((car, index) => {
+              return (
+                <Car
+                  key={index}
+                  name={car.name}
+                  year={car.year}
+                  onDelete={this.deleteHandler.bind(this, index)}
+                  onChangeName={event => this.onChangeName(event.target.value, index)} //люое название функции
+                />
+              );
+            })
+            : null
+          }
+        </div>
 
         <div>
           <h2>019 Работа с условными операторами</h2>
           <button onClick={this.toggleCarsHandler}>Toggle cars</button>
         </div>
-
-        {/* <Car
-          name={cars[0].name}
-          year={cars[0].year}
-          onChangeTitle={this.changeTitleHandler.bind(this, cars[0].name)} //люое название функции
-        />
-        <Car
-          name={cars[1].name}
-          year={cars[1].year}
-          onChangeTitle={() => this.changeTitleHandler(cars[1].name)} />
-        <Car
-          name={cars[2].name}
-          year={cars[2].year}
-          onChangeTitle={() => this.changeTitleHandler(cars[2].name)} /> */}
       </div>
     );
   };

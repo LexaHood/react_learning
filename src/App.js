@@ -6,6 +6,7 @@ import Clock from './Clock/Clock';
 class App extends Component {
 
   constructor(props) {
+    console.log('App constructor');
     super(props)
     this.state = {
       cars: [
@@ -23,7 +24,7 @@ class App extends Component {
   toggleCarsHandler = () => {
     this.setState({
       showCars: !this.state.showCars
-    })
+    });
   };
 
   changeTitleHandlerOld = () => {
@@ -45,7 +46,7 @@ class App extends Component {
     cars[index] = car;
     this.setState({
       cars // cars: cars
-    })
+    });
   }
 
   deleteHandler(index) {
@@ -53,7 +54,7 @@ class App extends Component {
 
     cars.splice(index, 1);
 
-    this.setState({ cars })
+    this.setState({ cars });
   }
 
   handleInput = (event) => {
@@ -61,10 +62,18 @@ class App extends Component {
     this.setState({
       pageTitle: event.target.value
     })
+  };
+
+  componentWillMount() {
+    console.log('App componentWillMount');
+  }
+
+  componentDidMount() {
+    console.log('App componentDidMount');
   }
 
   render() {
-    // console.log('render App');
+    console.log('render App');
     return (
       <div className="App">
         <div>

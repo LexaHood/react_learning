@@ -5,17 +5,20 @@ import Clock from './Clock/Clock';
 
 class App extends Component {
 
-  state = {
-    cars: [
-      { name: 'Ford', year: 2019 },
-      { name: 'Audi', year: 2022 },
-      { name: 'Ferrari', year: 2008 },
-      // { name: 'Ferrari', year: 2022 },
-      // { name: 'Ford', year: 2002 },
-    ],
-    pageTitle: 'React components',
-    showCars: false
-  };
+  constructor(props) {
+    super(props)
+    this.state = {
+      cars: [
+        { name: 'Ford', year: 2019 },
+        { name: 'Audi', year: 2022 },
+        { name: 'Ferrari', year: 2008 },
+        // { name: 'Ferrari', year: 2022 },
+        // { name: 'Ford', year: 2002 },
+      ],
+      pageTitle: 'React components',
+      showCars: false
+    };
+  }
 
   toggleCarsHandler = () => {
     this.setState({
@@ -65,7 +68,7 @@ class App extends Component {
     return (
       <div className="App">
         <div>
-          <h2>{this.state.pageTitle}</h2>
+          <h2>{this.props.title}</h2>
           <input type='text' onChange={this.handleInput}></input>
           <button onClick={this.changeTitleHandlerOld}>Change title</button>
         </div>

@@ -38,8 +38,13 @@ export default (props) => {
     inputClasses.push('bold');
   }
 
+  const style = {
+    border: '1px solid #ccc',
+    boxShadow: '0 4px 5px 0 rgba(0, 0, 0, .14)'
+  };
+
   return (
-    <div className="Car">
+    <div className="Car" style={style}>
       <p>Car name: <strong>{props.name}</strong></p>
       <p>Year: <strong>{props.year}</strong></p>
       <input

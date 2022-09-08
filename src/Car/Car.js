@@ -1,3 +1,4 @@
+import './Car.css';
 // function Car() {
 //   return (
 //     <h3>This is car compomemt</h3>
@@ -24,17 +25,36 @@
 // export default carMiniProgressive;
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default (props) => (
-  <div style={{
+export default (props) => {
+  const inputClasses = ['input'];
+
+  if (props.name !== '') {
+    inputClasses.push('green');
+  } else {
+    inputClasses.push('red');
+  }
+
+  if (props.name.lenght > 6) {
+    inputClasses.push('bold');
+  }
+
+  const style = {
     border: '1px solid #ccc',
-    marginBottom: '10px',
-    display: 'inline-block',
-    padding: '10px',
-    margin: '10px'
-  }}>
-    <p>Car name: <strong>{props.name}</strong></p>
-    <p>Year: <strong>{props.year}</strong></p>
-    <input type={'text'} onChange={props.onChangeName} value={props.name}></input>
-    <button onClick={props.onDelete}>delete</button>
-  </div>
-)
+    boxShadow: '0 4px 5px 0 rgba(0, 0, 0, .14)'
+  };
+
+  return (
+    <div className="Car" style={style}>
+      <p>Car name: <strong>{props.name}</strong></p>
+      <p>Year: <strong>{props.year}</strong></p>
+      <input
+        type={'text'}
+        onChange={props.onChangeName}
+        value={props.name}
+        className={inputClasses.join(' ')}
+        >
+      </input>
+      <button onClick={props.onDelete}>delete</button>
+    </div>
+  );
+}
